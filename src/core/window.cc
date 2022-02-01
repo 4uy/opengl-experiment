@@ -30,3 +30,8 @@ Window::~Window() {
     glfwDestroyWindow(m_window);
     glfwTerminate();
 }
+
+void Window::Update() {
+    glfwSwapBuffers(m_window);
+    glfwPollEvents();
+}

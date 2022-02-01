@@ -10,6 +10,8 @@ public:
     Window(int width, int height, std::string title);
     ~Window();
 public:
+    void Update();
+public:
     GLFWwindow* Get() { return m_window; }
     int GetWidth() { return m_width; }
     int GetHeight() { return m_height; }

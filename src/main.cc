@@ -22,8 +22,7 @@ int main() {
 
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glfwSwapBuffers(native_window);
-        glfwPollEvents();
+        window.Update();
     }
 
     return 0;
