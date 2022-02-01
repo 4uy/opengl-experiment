@@ -11,7 +11,12 @@ int main() {
     Window window(1280, 720, "Minecraft");
     GLFWwindow* native_window = window.Get();
 
+    glViewport(0, 0, window.GetWidth(), window.GetHeight());
+    glClearColor(0.1f, 0.1f, 0.2f, 0.0f);
+
     while (!glfwWindowShouldClose(native_window)) {
+        glClear(GL_COLOR_BUFFER_BIT);
+
         glfwSwapBuffers(native_window);
         glfwPollEvents();
     }
