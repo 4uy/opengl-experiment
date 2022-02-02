@@ -30,3 +30,8 @@ target_link_libraries(${PROJECT_NAME} glad)
 add_subdirectory(lib/glfw)
 target_include_directories(${PROJECT_NAME} PUBLIC lib/glfw/include)
 target_link_libraries(${PROJECT_NAME} glfw)
+
+# GLM
+add_subdirectory(lib/glm)
+target_include_directories(${PROJECT_NAME} PUBLIC lib/glm/glm)
+target_link_libraries(${PROJECT_NAME} glm)
