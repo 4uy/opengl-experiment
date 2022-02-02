@@ -7,6 +7,7 @@
 #include "core/time.h"
 #include "graphics/vertex_array.h"
 #include "graphics/primitives.h"
+#include "graphics/shader.h"
 
 int main() {
     std::cout << "Hello, world!" << std::endl;
@@ -23,7 +24,13 @@ int main() {
     glClearColor(0.1f, 0.1f, 0.2f, 0.0f);
 
     // Create shape
-    VertexArray vertex_array = primitives::Quad();
+    VertexArray vertex_array = primitives::Cube();
+    
+    // Create screen shader
+    Shader shader(
+        "res/shaders/vertex.glsl",
+        "res/shaders/fragment.glsl"
+    );
 
     // Game loop
     while (!glfwWindowShouldClose(native_window)) {
@@ -34,8 +41,10 @@ int main() {
         glClear(GL_COLOR_BUFFER_BIT);
 
         // Draw shape
+        shader.Bind();
         vertex_array.Draw();
-
+        shader.Unbind();
+                
         // Update window
         window.Update();
     }
