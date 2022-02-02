@@ -26,6 +26,7 @@ int main() {
     glViewport(0, 0, window.GetWidth(), window.GetHeight());
     glClearColor(0.1f, 0.1f, 0.2f, 0.0f);
     glEnable(GL_DEPTH_TEST);
+    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); // wireframe render
 
     // Create shape
     VertexArray vertex_array = primitives::Cube();
