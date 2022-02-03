@@ -54,6 +54,9 @@ int main() {
         // Update time
         time.Update();
 
+        // Handle input
+        camera.HandleInput();
+
         // OpenGL stuff
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
