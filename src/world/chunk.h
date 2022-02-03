@@ -4,9 +4,6 @@
 
 #include "../world/block.h"
 
-class Chunk {
-public:
-    Chunk();
-public:
+struct Chunk {
     std::array<Block, 65536> blocks;
 };
